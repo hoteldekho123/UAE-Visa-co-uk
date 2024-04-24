@@ -2,6 +2,7 @@
   --theming1 :#d71921;
   --theming1-hover :#d63606;
 }
+
 /* navbar css start */
 .navbar {
   transition: all 0.3s ease-in-out;
@@ -44,7 +45,7 @@
   color: var(--theming1) !important;
 }
 .navbar .nav-link:hover::before {
-  transform: scaleX(1); /* Expand to full width on hover */
+  transform: scaleX(1); 
   transform-origin: left center;
 }
 .navbar.scrolled .nav-link {
