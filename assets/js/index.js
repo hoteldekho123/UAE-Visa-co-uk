@@ -51,74 +51,105 @@ $(document).ready(function(){"use strict";
 
 // tab js
 const DOM = {
-    tabsNav: document.querySelector('.tabs__nav'),
-    tabsNavItems: document.querySelectorAll('.tabs__nav-item'),
-    panels: document.querySelectorAll('.tabs__panel')
-  };
-  const setActiveItem = elem => {
-    DOM.tabsNavItems.forEach(el => {
-      el.classList.remove('js-active');
-    });
-    elem.classList.add('js-active');
-  };
-  const findActiveItem = () => {
-    let activeIndex = 0;
-    for(let i = 0; i < DOM.tabsNavItems.length; i++) {
-      if (DOM.tabsNavItems[i].classList.contains('js-active')) {
-        activeIndex = i;
-        break;
-      };
-    };
-    return activeIndex;
-  };
-  const findActiveItemParams = (activeItemIndex) => {
-    const activeTab = DOM.tabsNavItems[activeItemIndex];
-    const activeItemWidth = activeTab.offsetWidth - 1;
-    const activeItemOffset_left = activeTab.offsetLeft;
-    return [activeItemWidth, activeItemOffset_left];
-  };
-  const appendDecorationNav = () => {
-    let decorationElem = document.createElement('div');
-    decorationElem.classList.add('tabs__nav-decoration');
-    decorationElem.classList.add('js-decoration');
-    DOM.tabsNav.append(decorationElem); 
-    return decorationElem;
-  };
-  const styleDecorElem = (elem, decorWidth, decorOffset) => {
-    elem.style.width = `${decorWidth}px`;
-    elem.style.transform = `translateX(${decorOffset}px)`;
-  };
-  const findActivePanel = index => {
-    return DOM.panels[index];
-  };
-  const setActivePanel = index => {
-    DOM.panels.forEach(el => {
-      el.classList.remove('js-active');
-    });
-    DOM.panels[index].classList.add('js-active');
-  };
-  window.addEventListener('load', () => {
-    const activeItemIndex = findActiveItem();
-    const [decorWidth, decorOffset] = findActiveItemParams(activeItemIndex);
-    const decorElem = appendDecorationNav();
-    styleDecorElem(decorElem, decorWidth, decorOffset);
+  tabsNav: document.querySelector('.tabs__nav'),
+  tabsNavItems: document.querySelectorAll('.tabs__nav-item'),
+  panels: document.querySelectorAll('.tabs__panel')
+};
+
+const setActiveItem = elem => {
+  DOM.tabsNavItems.forEach(el => {
+    el.classList.remove('js-active');
+  });
+  elem.classList.add('js-active');
+};
+
+const findActiveItem = () => {
+  let activeIndex = 0;
+  for (let i = 0; i < DOM.tabsNavItems.length; i++) {
+    if (DOM.tabsNavItems[i].classList.contains('js-active')) {
+      activeIndex = i;
+      break;
+    }
+  }
+  return activeIndex;
+};
+
+const findActiveItemParams = (activeItemIndex) => {
+  const activeTab = DOM.tabsNavItems[activeItemIndex];
+  const activeItemWidth = activeTab.offsetWidth - 1;
+  const activeItemHeight = activeTab.offsetHeight; // Add this line
+  const activeItemOffset_left = activeTab.offsetLeft;
+  const activeItemOffset_top = activeTab.offsetTop; // Add this line
+  return [activeItemWidth, activeItemHeight, activeItemOffset_left, activeItemOffset_top];
+};
+
+const appendDecorationNav = () => {
+  let decorationElem = document.createElement('div');
+  decorationElem.classList.add('tabs__nav-decoration');
+  decorationElem.classList.add('js-decoration');
+  DOM.tabsNav.append(decorationElem);
+  return decorationElem;
+};
+
+const styleDecorElem = (elem, decorWidth, decorHeight, decorOffset_left, decorOffset_top) => {
+  elem.style.width = `${decorWidth}px`;
+  elem.style.height = `${decorHeight}px`; // Add this line
+  elem.style.transform = `translate(${decorOffset_left}px, ${decorOffset_top}px)`; // Modify this line
+};
+
+const findActivePanel = index => {
+  return DOM.panels[index];
+};
+
+const setActivePanel = index => {
+  DOM.panels.forEach(el => {
+    el.classList.remove('js-active');
+  });
+  DOM.panels[index].classList.add('js-active');
+};
+
+window.addEventListener('load', () => {
+  const activeItemIndex = findActiveItem();
+  const [decorWidth, decorHeight, decorOffset_left, decorOffset_top] = findActiveItemParams(activeItemIndex);
+  const decorElem = appendDecorationNav();
+  styleDecorElem(decorElem, decorWidth, decorHeight, decorOffset_left, decorOffset_top);
+  findActivePanel(activeItemIndex);
+  setActivePanel(activeItemIndex);
+});
+
+DOM.tabsNav.addEventListener('click', e => {
+  const navElemClass = 'tabs__nav-item';
+  if (e.target.classList.contains(navElemClass)) {
+    const clickedTab = e.target;
+    setActiveItem(clickedTab);
+    const activeItemIndex = Array.from(DOM.tabsNavItems).indexOf(clickedTab);
+    const [decorWidth, decorHeight, decorOffset_left, decorOffset_top] = findActiveItemParams(activeItemIndex);
+    const decorElem = document.querySelector('.js-decoration');
+    styleDecorElem(decorElem, decorWidth, decorHeight, decorOffset_left, decorOffset_top);
     findActivePanel(activeItemIndex);
     setActivePanel(activeItemIndex);
-  });
-  DOM.tabsNav.addEventListener('click', e => {
-    const navElemClass = 'tabs__nav-item';
-    if(e.target.classList.contains(navElemClass)) {
-      const clickedTab = e.target;
-      const activeItemIndex = Array.from(DOM.tabsNavItems).indexOf(clickedTab);
-      setActiveItem(clickedTab);
-      const activeItem = findActiveItem();
-      const [decorWidth, decorOffset] = findActiveItemParams(activeItem);
-      const decorElem = document.querySelector('.js-decoration');
-      styleDecorElem(decorElem, decorWidth, decorOffset);
-      findActivePanel(activeItemIndex);
-      setActivePanel(activeItemIndex);
-    }
+  }
 });
+
+// Add event listener for window resize
+window.addEventListener('resize', () => {
+  // Check if window width is less than or equal to 767px
+  if (window.innerWidth <= 767) {
+    // Change flex-direction to vertical
+    DOM.tabsNav.style.flexDirection = 'column';
+    // Set tabs__nav-item width to 100%
+    DOM.tabsNavItems.forEach(item => {
+      item.style.width = '100%';
+    });
+  } else {
+    // Reset flex-direction and width
+    DOM.tabsNav.style.flexDirection = 'row';
+    DOM.tabsNavItems.forEach(item => {
+      item.style.width = '';
+    });
+  }
+});
+
 
 
 // price card class add 
