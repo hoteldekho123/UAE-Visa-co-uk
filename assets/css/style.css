@@ -42,7 +42,7 @@
   transform-origin: right center;
 }
 .navbar .nav-link.active {
-  color: #bfbfbf !important;
+  color: #e9e9e9 !important;
 }
 .navbar .nav-link:hover::before {
   transform: scaleX(1); 
