@@ -8,6 +8,23 @@
   transition: all 0.3s ease-in-out;
   padding-block: 12px;
 }
+.navbar.scrolled {
+  animation: fixedAnim 1s forwards; 
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  width: 100%;
+}
+@keyframes fixedAnim {
+  from {
+      top: -100px;
+  }
+  to {
+      top: 0;
+  }
+}
 .navbar .navbar-logo {
     height: 39px;
 }
@@ -85,6 +102,28 @@
   padding: 10px;
   font-size: 18px;
   background-color: #ffff;
+}
+.navbar-two {
+  background-color: #FFF;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.navbar-two .navbar-logo img {
+  filter: brightness(1);
+}
+.navbar-two .nav-link {
+  color: #000;
+}
+.navbar-two .nav-link.active {
+  color: var(--theming1) !important;
+}
+.navbar-two .nav-link:hover {
+  color: var(--theming1);
+}
+.navbar-two .nav-contact-link {
+  color: #000;
+}
+.navbar-two .nav-contact-link i {
+  color: var(--theming1);
 }
 /* navbar css end */
 
@@ -270,7 +309,6 @@
   opacity: 1;
   
 }
-
 
 /* price card start  */
 .pricing-card {
