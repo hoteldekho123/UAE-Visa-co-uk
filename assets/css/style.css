@@ -42,7 +42,7 @@
   transform-origin: right center;
 }
 .navbar .nav-link.active {
-  color: var(--theming1) !important;
+  color: #bfbfbf !important;
 }
 .navbar .nav-link:hover::before {
   transform: scaleX(1); 
@@ -67,6 +67,12 @@
   color: #000;
 }
 .navbar.scrolled .nav-contact-link i {
+  color: var(--theming1);
+}
+.navbar.scrolled .nav-link.active {
+  color: var(--theming1) !important;
+}
+.navbar.scrolled .nav-link:hover {
   color: var(--theming1);
 }
 .navbar.scrolled .nav-contact-link:hover {
