@@ -870,10 +870,9 @@
   height: 118px;
 }
 .country-section .country-main {
- 
   overflow: hidden;
 }
-.country-section .country-main::before {
+/* .country-section .country-main::before {
   content: '';
   position: absolute;
   left: 0;
@@ -886,6 +885,177 @@
         rgba(255,0,0,0.00) 70%
   );
   width: 100%;
-}
+} */
 /* country section end */
 
+
+/* visa application form section start */
+.visa-form-section {
+  margin-top: 35px;
+}
+.visa-form-section .visa-form-heading {
+  font-size: 34px;
+  font-weight: 700;
+  color: #000;
+  padding-bottom: 3px;
+}
+.visa-form-section .visa-form-heading::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  border-radius: 7px;
+  bottom: 0;
+  width: 120px;
+  background-color: var(--theming1);
+}
+.visa-form-section .visa-form-card {
+  padding: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.visa-form-card .form-inner-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4d4d4d;
+}
+.visa-form-card .form-price {
+  font-size: 20px;
+  margin-top: 21px;
+  font-weight: 700;
+}
+.uae-input-group .iti {
+  width: 100%;
+}
+.iti .iti__selected-country {
+  border-right: 1px solid #dfdfdf;
+}
+.iti .iti__country {
+  font-size: 15px;
+}
+.iti--inline-dropdown .iti__dropdown-content {
+  z-index: 3 !important;
+}
+.uae-input-group .uae-group-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 15px;
+  padding-left: 2px;
+}
+.uae-input-group .uae-input {
+  height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.uae-input-group .uae-input:focus {
+  border: 1.4px solid var(--theming1);
+}
+.uae-input-group .date-input::before {
+  content: "\f073";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  top: 50%;
+  right: 12px;
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 18px;
+  z-index: 1;
+}
+.flatpickr-calendar .flatpickr-monthDropdown-months,
+.flatpickr-calendar .numInputWrapper {
+  font-size: 17px !important;
+}
+.flatpickr-calendar .flatpickr-weekday {
+  font-size: 14px;
+}
+.flatpickr-calendar .flatpickr-day {
+  color: #000 !important;
+}
+.flatpickr-calendar .flatpickr-disabled {
+  color: rgba(57,57,57,0.1) !important;
+}
+.flatpickr-calendar .flatpickr-day.selected {
+  color: #ffff !important;
+}
+.visa-form-section .upload-heading {
+  font-size: 21px;
+}
+.visa-form-section .accepted-format {
+  font-size: 15px;
+}
+
+.input-effect {
+}
+.select-form::before {
+  content: "\f107"; 
+  font-family: FontAwesome;
+  position: absolute;
+  right: 5px;
+  top: 25px;
+  font-size: 15px;
+}
+.input-effect .form-input {
+  height: 52px;
+  padding-top: 22px !important;
+  font-size: 15px;
+  color: #000;
+  border-color: #adadad !important;
+}
+.input-effect .form-input:focus ~ .focus-border {
+  width: 100%;
+}
+.input-effect .form-title {
+  left: 0;
+  font-weight: 600;
+  top: 44%;
+  font-size: 15px;
+  line-height: normal;
+  transition: all 0.2s ease-in-out;
+}
+.input-effect .form-input:focus ~ .form-title,
+.input-effect .form-input:not([value=""]) ~ .form-title {
+  top: 0;
+  color: var(--theming1);
+  font-size: 14px;
+}
+.input-effect .focus-border {
+  height: 2px;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--theming1);
+  bottom: 0;
+  left: 0;
+}
+
+/* visa application form section end */
+
+
+/* dropzone box start */
+.dropzone {
+  border: 1px dashed var(--theming1) !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 6px;
+  padding: 12px !important;
+  height: 180px !important;
+}
+.dropzone .dropzone-title {
+  font-weight: 700;
+  color: var(--theming1);
+}
+.dropzone .dz-preview .dz-details .dz-filename {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* dropzone box end */
+
+
+/* partners section start */
+.partner-section {
+
+}
+.partner-section .partner-card {
+  padding: 15px;
+  border-radius: 10px;
+}
+/* partners section end */

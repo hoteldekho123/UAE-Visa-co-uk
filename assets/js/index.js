@@ -7,163 +7,6 @@ window.addEventListener('scroll', function() {
       navbar.classList.remove('scrolled');
     }
 });
-  
-// scroll to top progress 
-(function($) { "use strict";
-$(document).ready(function(){"use strict";
-
-		//Scroll back to top
-
-		var progressPath = document.querySelector('.progress-wrap path');
-		var pathLength = progressPath.getTotalLength();
-		progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-		progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-		progressPath.style.strokeDashoffset = pathLength;
-		progressPath.getBoundingClientRect();
-		progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-		var updateProgress = function () {
-			var scroll = $(window).scrollTop();
-			var height = $(document).height() - $(window).height();
-			var progress = pathLength - (scroll * pathLength / height);
-			progressPath.style.strokeDashoffset = progress;
-		}
-		updateProgress();
-		$(window).scroll(updateProgress);
-		var offset = 50;
-		var duration = 550;
-		jQuery(window).on('scroll', function() {
-			if (jQuery(this).scrollTop() > offset) {
-				jQuery('.progress-wrap').addClass('active-progress');
-			} else {
-				jQuery('.progress-wrap').removeClass('active-progress');
-			}
-		});
-		jQuery('.progress-wrap').on('click', function(event) {
-			event.preventDefault();
-			jQuery('html, body').animate({scrollTop: 0}, duration);
-			return false;
-		})
-
-
-	});
-})(jQuery);
-
-
-// tab js
-const DOM = {
-  tabsNav: document.querySelector('.tabs__nav'),
-  tabsNavItems: document.querySelectorAll('.tabs__nav-item'),
-  panels: document.querySelectorAll('.tabs__panel')
-};
-
-const setActiveItem = elem => {
-  DOM.tabsNavItems.forEach(el => {
-    el.classList.remove('js-active');
-  });
-  elem.classList.add('js-active');
-};
-
-const findActiveItem = () => {
-  let activeIndex = 0;
-  for (let i = 0; i < DOM.tabsNavItems.length; i++) {
-    if (DOM.tabsNavItems[i].classList.contains('js-active')) {
-      activeIndex = i;
-      break;
-    }
-  }
-  return activeIndex;
-};
-
-const findActiveItemParams = (activeItemIndex) => {
-  const activeTab = DOM.tabsNavItems[activeItemIndex];
-  const activeItemWidth = activeTab.offsetWidth - 1;
-  const activeItemHeight = activeTab.offsetHeight; // Add this line
-  const activeItemOffset_left = activeTab.offsetLeft;
-  const activeItemOffset_top = activeTab.offsetTop; // Add this line
-  return [activeItemWidth, activeItemHeight, activeItemOffset_left, activeItemOffset_top];
-};
-
-const appendDecorationNav = () => {
-  let decorationElem = document.createElement('div');
-  decorationElem.classList.add('tabs__nav-decoration');
-  decorationElem.classList.add('js-decoration');
-  DOM.tabsNav.append(decorationElem);
-  return decorationElem;
-};
-
-const styleDecorElem = (elem, decorWidth, decorHeight, decorOffset_left, decorOffset_top) => {
-  elem.style.width = `${decorWidth}px`;
-  elem.style.height = `${decorHeight}px`; // Add this line
-  elem.style.transform = `translate(${decorOffset_left}px, ${decorOffset_top}px)`; // Modify this line
-};
-
-const findActivePanel = index => {
-  return DOM.panels[index];
-};
-
-const setActivePanel = index => {
-  DOM.panels.forEach(el => {
-    el.classList.remove('js-active');
-  });
-  DOM.panels[index].classList.add('js-active');
-};
-
-window.addEventListener('load', () => {
-  const activeItemIndex = findActiveItem();
-  const [decorWidth, decorHeight, decorOffset_left, decorOffset_top] = findActiveItemParams(activeItemIndex);
-  const decorElem = appendDecorationNav();
-  styleDecorElem(decorElem, decorWidth, decorHeight, decorOffset_left, decorOffset_top);
-  findActivePanel(activeItemIndex);
-  setActivePanel(activeItemIndex);
-});
-
-DOM.tabsNav.addEventListener('click', e => {
-  const navElemClass = 'tabs__nav-item';
-  if (e.target.classList.contains(navElemClass)) {
-    const clickedTab = e.target;
-    setActiveItem(clickedTab);
-    const activeItemIndex = Array.from(DOM.tabsNavItems).indexOf(clickedTab);
-    const [decorWidth, decorHeight, decorOffset_left, decorOffset_top] = findActiveItemParams(activeItemIndex);
-    const decorElem = document.querySelector('.js-decoration');
-    styleDecorElem(decorElem, decorWidth, decorHeight, decorOffset_left, decorOffset_top);
-    findActivePanel(activeItemIndex);
-    setActivePanel(activeItemIndex);
-  }
-});
-
-// Add event listener for window resize
-window.addEventListener('resize', () => {
-  // Check if window width is less than or equal to 767px
-  if (window.innerWidth <= 767) {
-    // Change flex-direction to vertical
-    DOM.tabsNav.style.flexDirection = 'column';
-    // Set tabs__nav-item width to 100%
-    DOM.tabsNavItems.forEach(item => {
-      item.style.width = '100%';
-    });
-  } else {
-    // Reset flex-direction and width
-    DOM.tabsNav.style.flexDirection = 'row';
-    DOM.tabsNavItems.forEach(item => {
-      item.style.width = '';
-    });
-  }
-});
-
-
-
-// price card class add 
-const checkbox1 = document.getElementById('price1');
-const element1 = document.getElementById('pricingnew');
-
-checkbox1.addEventListener('change', function() {
-if (this.checked) {
-    element1.classList.add('pricecard1');
-} else {
-    element1.classList.remove('pricecard1');
-}
-});
-
 
 // select country 
 (function($) {
@@ -437,6 +280,163 @@ if (this.checked) {
       
   });
 })(jQuery);     
+  
+// scroll to top progress 
+(function($) { "use strict";
+$(document).ready(function(){"use strict";
+
+		//Scroll back to top
+
+		var progressPath = document.querySelector('.progress-wrap path');
+		var pathLength = progressPath.getTotalLength();
+		progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+		progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+		progressPath.style.strokeDashoffset = pathLength;
+		progressPath.getBoundingClientRect();
+		progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+		var updateProgress = function () {
+			var scroll = $(window).scrollTop();
+			var height = $(document).height() - $(window).height();
+			var progress = pathLength - (scroll * pathLength / height);
+			progressPath.style.strokeDashoffset = progress;
+		}
+		updateProgress();
+		$(window).scroll(updateProgress);
+		var offset = 50;
+		var duration = 550;
+		jQuery(window).on('scroll', function() {
+			if (jQuery(this).scrollTop() > offset) {
+				jQuery('.progress-wrap').addClass('active-progress');
+			} else {
+				jQuery('.progress-wrap').removeClass('active-progress');
+			}
+		});
+		jQuery('.progress-wrap').on('click', function(event) {
+			event.preventDefault();
+			jQuery('html, body').animate({scrollTop: 0}, duration);
+			return false;
+		})
+
+
+	});
+})(jQuery);
+
+
+// tab js
+const DOM = {
+  tabsNav: document.querySelector('.tabs__nav'),
+  tabsNavItems: document.querySelectorAll('.tabs__nav-item'),
+  panels: document.querySelectorAll('.tabs__panel')
+};
+
+const setActiveItem = elem => {
+  DOM.tabsNavItems.forEach(el => {
+    el.classList.remove('js-active');
+  });
+  elem.classList.add('js-active');
+};
+
+const findActiveItem = () => {
+  let activeIndex = 0;
+  for (let i = 0; i < DOM.tabsNavItems.length; i++) {
+    if (DOM.tabsNavItems[i].classList.contains('js-active')) {
+      activeIndex = i;
+      break;
+    }
+  }
+  return activeIndex;
+};
+
+const findActiveItemParams = (activeItemIndex) => {
+  const activeTab = DOM.tabsNavItems[activeItemIndex];
+  const activeItemWidth = activeTab.offsetWidth - 1;
+  const activeItemHeight = activeTab.offsetHeight; // Add this line
+  const activeItemOffset_left = activeTab.offsetLeft;
+  const activeItemOffset_top = activeTab.offsetTop; // Add this line
+  return [activeItemWidth, activeItemHeight, activeItemOffset_left, activeItemOffset_top];
+};
+
+const appendDecorationNav = () => {
+  let decorationElem = document.createElement('div');
+  decorationElem.classList.add('tabs__nav-decoration');
+  decorationElem.classList.add('js-decoration');
+  DOM.tabsNav.append(decorationElem);
+  return decorationElem;
+};
+
+const styleDecorElem = (elem, decorWidth, decorHeight, decorOffset_left, decorOffset_top) => {
+  elem.style.width = `${decorWidth}px`;
+  elem.style.height = `${decorHeight}px`; // Add this line
+  elem.style.transform = `translate(${decorOffset_left}px, ${decorOffset_top}px)`; // Modify this line
+};
+
+const findActivePanel = index => {
+  return DOM.panels[index];
+};
+
+const setActivePanel = index => {
+  DOM.panels.forEach(el => {
+    el.classList.remove('js-active');
+  });
+  DOM.panels[index].classList.add('js-active');
+};
+
+window.addEventListener('load', () => {
+  const activeItemIndex = findActiveItem();
+  const [decorWidth, decorHeight, decorOffset_left, decorOffset_top] = findActiveItemParams(activeItemIndex);
+  const decorElem = appendDecorationNav();
+  styleDecorElem(decorElem, decorWidth, decorHeight, decorOffset_left, decorOffset_top);
+  findActivePanel(activeItemIndex);
+  setActivePanel(activeItemIndex);
+});
+
+DOM.tabsNav.addEventListener('click', e => {
+  const navElemClass = 'tabs__nav-item';
+  if (e.target.classList.contains(navElemClass)) {
+    const clickedTab = e.target;
+    setActiveItem(clickedTab);
+    const activeItemIndex = Array.from(DOM.tabsNavItems).indexOf(clickedTab);
+    const [decorWidth, decorHeight, decorOffset_left, decorOffset_top] = findActiveItemParams(activeItemIndex);
+    const decorElem = document.querySelector('.js-decoration');
+    styleDecorElem(decorElem, decorWidth, decorHeight, decorOffset_left, decorOffset_top);
+    findActivePanel(activeItemIndex);
+    setActivePanel(activeItemIndex);
+  }
+});
+
+// Add event listener for window resize
+window.addEventListener('resize', () => {
+  // Check if window width is less than or equal to 767px
+  if (window.innerWidth <= 767) {
+    // Change flex-direction to vertical
+    DOM.tabsNav.style.flexDirection = 'column';
+    // Set tabs__nav-item width to 100%
+    DOM.tabsNavItems.forEach(item => {
+      item.style.width = '100%';
+    });
+  } else {
+    // Reset flex-direction and width
+    DOM.tabsNav.style.flexDirection = 'row';
+    DOM.tabsNavItems.forEach(item => {
+      item.style.width = '';
+    });
+  }
+});
+
+
+
+// price card class add 
+const checkbox1 = document.getElementById('price1');
+const element1 = document.getElementById('pricingnew');
+
+checkbox1.addEventListener('change', function() {
+if (this.checked) {
+    element1.classList.add('pricecard1');
+} else {
+    element1.classList.remove('pricecard1');
+}
+});
+
 
 // read more and read less 
 function readMore(ele,eve){
@@ -475,3 +475,49 @@ var lightboxVideo = GLightbox({
     selector: '.glightbox3'
 });
 
+
+
+// dropzone js 
+Dropzone.autoDiscover = false;
+var myDropzone = new Dropzone("#myDropzone", {
+    url: "/upload", 
+    maxFilesize: 5, 
+    acceptedFiles: '.jpg, .jpeg, .png, .gif',
+    dictDefaultMessage: 'Drop files here or click to upload', 
+    addRemoveLinks: true, 
+    init: function() {
+        this.on("success", function(file, response) {
+            console.log("File uploaded successfully!");
+            console.log(response);
+        });
+        this.on("removedfile", function(file) {
+            console.log("File removed: " + file.name);
+        });
+    }
+});
+
+
+// input label 
+// JavaScript code
+document.addEventListener("DOMContentLoaded", function() {
+  const inputField = document.getElementById("inputField");
+  const inputLabel = document.getElementById("inputLabel");
+
+  inputField.addEventListener("focus", function() {
+    inputLabel.classList.add("label-focused");
+  });
+
+  inputField.addEventListener("blur", function() {
+    if (!inputField.value.trim()) {
+      inputLabel.classList.remove("label-focused");
+    }
+  });
+
+  inputField.addEventListener("input", function() {
+    if (inputField.value.trim()) {
+      inputLabel.classList.add("input-filled");
+    } else {
+      inputLabel.classList.remove("input-filled");
+    }
+  });
+});

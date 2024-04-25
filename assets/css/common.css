@@ -263,6 +263,51 @@ html, body {
 
 /* page heading section start  */
 .page-heading-section {
-    
+    padding-block: 50px;
+    background: url(../img/aboutus-bg.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.page-heading-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #3b3b3b54;
+}
+.page-heading-section .page-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
 }
 /* page heading section end */
+
+
+/* breadcrumb section start  */
+.breadcrumb-section {
+    padding-block: 14px;
+}
+.breadcrumb-section .breadcrumb-link,
+.breadcrumb-section .breadcrumb-link a{
+    font-weight: 600;
+    font-size: 15px;
+    gap: 4px;
+    color: #505050;
+}
+.breadcrumb-section .breadcrumb-link a i,
+.breadcrumb-section .breadcrumb-link i {
+    color: #5c5c5c;
+}
+.breadcrumb-section .breadcrumb-list {
+    gap: 8px;
+}
+.breadcrumb-section .breadcrumb-link .home-icon {
+    margin-top: -2px;
+}
+.breadcrumb-section .breadcrumb-link.active {
+    color: var(--theming1);
+}
+/* breadcrumb section end  */
+

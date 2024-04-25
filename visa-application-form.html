@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAE Visa - About Us</title>
+    <title>UAE Visa - Visa Application Form</title>
     <!-- jquery  -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- bootstrap css  -->
@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="assets/libs/select2/select2.min.css">
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- iti input -->
+    <link rel="stylesheet" href="assets/libs/iti/intlTelInput.min.css">
+    <!-- date picker css  -->
+    <link rel="stylesheet" href="assets/libs/datepicker/flatpickr.min.css">
+    <!-- dropzone css  -->
+    <link rel="stylesheet" href="assets/libs/dropzone/dropzone.min.css">
     <!-- font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,29 +110,336 @@
     </nav>
     <!-- navbar end -->
 
-    <!-- page heading section start -->
-    <section class="page-heading-section position-relative">
+    <!-- breadcrumb section start -->
+    <div class="breadcrumb-section">
         <div class="container">
-            <div class="page-heading-inner position-relative z-1">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <div class="page-heading">
-                            About Us
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-unstyled breadcrumb-list d-flex align-items-center m-0">
+                        <li class="breadcrumb-link d-flex align-items-center">
+                            <a href="index.html" class="text-decoration-none d-flex align-items-center">
+                                <i class="fa-solid fa-house-chimney home-icon"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-link d-flex align-items-center">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </li>
+                        <li class="breadcrumb-link d-flex align-items-center active">
+                            UAE Visa Application Form
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb section end -->
+
+    <!-- visa application form section start -->
+    <section class="visa-form-section d-none">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="visa-form-heading position-relative">
+                        Dubai Visa Application Form
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="visa-form-card bg-light">
+                        <div class="form-inner-heading text-center">
+                            Please Provide The Following Details
+                        </div>
+                        <form action="">
+                            <div class="row mt-4 g-3">
+                                <div class="col-md-4">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Select Entry Type <span class="text-danger">*</span></label>
+                                        <select class="form-select shadow-none uae-input">
+                                            <option value="" selected disabled>--Select--</option>
+                                            <option value="14 Day Visa Single Entry">14 Day Visa Single Entry</option>
+                                            <option value="14 Day Visa Multiple Entry">14 Day Visa Multiple Entry</option>
+                                            <option value="30 Days Visa Single Entry">30 Days Visa Single Entry</option>
+                                            <option value="30 Days Visa Multiple Entry">30 Days Visa Multiple Entry</option>
+                                            <option value="60 Days Visa Single Entry">60 Days Visa Single Entry</option>
+                                            <option value="60 Days Visa Multiple Entry">60 Days Visa Multiple Entry</option>
+                                            <option value="90 Days Single Visa Entry">90 Days Single Visa Entry</option>
+                                            <option value="90 Days Visa Multiple Entry">90 Days Visa Multiple Entry</option>
+                                            <option value="48 Hours Dubai Transit Visa">48 Hours Dubai Transit Visa</option>
+                                            <option value="90 Days Job Seeker Visa">90 Days Job Seeker Visa</option>
+                                            <option value="96 Hours Dubai Transit Visa">96 Hours Dubai Transit Visa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Select Service Type <span class="text-danger">*</span></label>
+                                        <select class="form-select shadow-none uae-input">
+                                            <option value="" selected disabled>--Select Service Type--</option>
+                                            <option value="regular">Regular(Time 02 - 03 Days)</option>
+                                            <option value="express">Express(Time 04 - 12 Hours)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4"></div>
+                                <div class="col-md-6">
+                                    <div class="hero-input-group d-flex flex-column uae-input-group">
+                                        <label for="" class="uae-group-label">I Am a Citizen of <span class="text-danger">*</span></label>
+                                        <select name="country"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="hero-input-group d-flex flex-column uae-input-group">
+                                        <label for="" class="uae-group-label">I Am Travelling From <span class="text-danger">*</span></label>
+                                        <select name="country"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Applicant Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Applicant Full Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Your Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control shadow-none uae-input" placeholder="Your Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Marital Status <span class="text-danger">*</span></label>
+                                        <select class="form-select shadow-none uae-input">
+                                            <option value="" selected disabled>Select Marital Status</option>
+                                            <option value="Single">Single</option>
+                                            <option value="Single">Married</option>
+                                            <option value="Single">Other</option>
+                                          
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Passport Number <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Passport Number ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Mobile / WhatsApp Number <span class="text-danger">*</span></label>
+                                        <div>
+                                            <input id="phone" name="phone" type="tel" value="" class="form-control shadow-none uae-input w-100" placeholder="Mobile / WhatsApp Number"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Profession  <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Profession ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Travel Date To UAE  <span class="text-danger">*</span></label>
+                                        <div class="date-input position-relative bg-white">
+                                            <input type="text" id="datepicker" class="form-control bg-transparent position-relative z-2 shadow-none uae-input" placeholder="Select Date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group"> 
+                                        <label for="" class="uae-group-label">Purpose of Travel  <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Purpose of Travel ">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 mt-4 pt-3">
+                    <div class="fw-bold text-center upload-heading">
+                        Please Upload The Following Documents
+                    </div>
+                    <hr class="my-2">
+                    <div class="accepted-format">
+                       <span class="fw-semibold"> Accepted Formats :</span> WORD, PDF, JPG or PNG    
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <form action="/upload" class="dropzone bg-white text-center" id="myDropzone">
+                                <div class="dropzone-title text-center">
+                                    Upload Passport
+                                </div>
+                                <div class="dz-message" data-dz-message>
+                                    <span>
+                                        <img src="assets/img/passport.webp" alt="passport">
+                                    </span>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
-                    <div class="col-12">
-                        <ul class="m-0 breadcrumb-section">
-                            <li class="breadcrumb-link">
-                                <i class="fa-solid fa-house-chimney"></i>
-                                <a href="">Home</a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
-    <!-- page heading section end -->
+    <!-- visa application form section end -->
+
+    <!-- visa application form section start -->
+    <section class="visa-form-section visa-form-section-two">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="visa-form-heading position-relative">
+                        Dubai Visa Application Form
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="visa-form-card bg-light">
+                        <div class="form-inner-heading text-center">
+                            Please Provide The Following Details
+                        </div>
+                        <form action="">
+                            <div class="row mt-4 g-4">
+                                <div class="col-md-4">
+                                    <div class="input-effect position-relative select-form">
+                                        <select name="" id="" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0">
+                                            <option value="" selected disabled>--Select--</option>
+                                            <option value="14 Day Visa Single Entry">14 Day Visa Single Entry</option>
+                                            <option value="14 Day Visa Multiple Entry">14 Day Visa Multiple Entry</option>
+                                            <option value="30 Days Visa Single Entry">30 Days Visa Single Entry</option>
+                                            <option value="30 Days Visa Multiple Entry">30 Days Visa Multiple Entry</option>
+                                            <option value="60 Days Visa Single Entry">60 Days Visa Single Entry</option>
+                                            <option value="60 Days Visa Multiple Entry">60 Days Visa Multiple Entry</option>
+                                            <option value="90 Days Single Visa Entry">90 Days Single Visa Entry</option>
+                                            <option value="90 Days Visa Multiple Entry">90 Days Visa Multiple Entry</option>
+                                            <option value="48 Hours Dubai Transit Visa">48 Hours Dubai Transit Visa</option>
+                                            <option value="90 Days Job Seeker Visa">90 Days Job Seeker Visa</option>
+                                            <option value="96 Hours Dubai Transit Visa">96 Hours Dubai Transit Visa</option>
+                                        </select>
+                                        <label for="maritalstatus" class="form-title position-absolute">Select Entry Type <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-effect position-relative select-form">
+                                        <select name="" id="" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0">
+                                            <option value="" selected disabled>--Select--</option>
+                                            <option value="regular">Regular(Time 02 - 03 Days)</option>
+                                            <option value="express">Express(Time 04 - 12 Hours)</option>
+                                        </select>
+                                        <label for="maritalstatus" class="form-title position-absolute">Select Service Type <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-price">
+                                        Fee : $ 0
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative">
+                                        <input id="applicantname" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" type="text" placeholder="" onkeyup="this.setAttribute('value', this.value);" value="">
+                                        <label for="applicantname" class="form-title position-absolute">Applicant Full Name <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative">
+                                        <input id="emailaddress" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" type="text" placeholder="" onkeyup="this.setAttribute('value', this.value);" value="">
+                                        <label for="emailaddress" class="form-title position-absolute">Your Email Address <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative select-form">
+                                        <select name="" id="" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0">
+                                            <option value="">Single</option>
+                                            <option value="">Married</option>
+                                            <option value="">Other</option>
+                                        </select>
+                                        <label for="maritalstatus" class="form-title position-absolute">Marital Status <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative">
+                                        <input id="passportnumber" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" type="text" placeholder="" onkeyup="this.setAttribute('value', this.value);" value="">
+                                        <label for="passportnumber" class="form-title position-absolute">Passport Number <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative">
+                                        <input id="inputField" name="phone" type="tel" value="" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" placeholder="" onkeyup="this.setAttribute('value', this.value);" value="">
+                                        <label for="inputField" id="inputLabel" class="form-title position-absolute">Mobile / WhatsApp Number <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative">
+                                        <input id="profession" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" type="text" placeholder="" onkeyup="this.setAttribute('value', this.value);" value="">
+                                        <label for="profession" class="form-title position-absolute">Profession <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative uae-input-group ">
+                                        <div class="position-relative date-input ">
+                                            <input id="datepicker" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" type="text" placeholder="" onkeyup="this.setAttribute('value', this.value);" value=" ">
+                                            <label for="datepicker" class="form-title position-absolute">Travel Date To UAE <span class="text-danger">* </span></label>
+                                            <span class="focus-border position-absolute"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-effect position-relative">
+                                        <input id="purposetravel" class="form-input w-100 bg-transparent border-0 border-bottom p-0 form-control shadow-none rounded-0" type="text" placeholder="" onkeyup="this.setAttribute('value', this.value);" value="">
+                                        <label for="purposetravel" class="form-title position-absolute">Purpose of Travel <span class="text-danger">* </span></label>
+                                        <span class="focus-border position-absolute"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 mt-4 pt-3">
+                    <div class="fw-bold text-center upload-heading">
+                        Please Upload The Following Documents
+                    </div>
+                    <hr class="my-2">
+                    <div class="accepted-format">
+                       <span class="fw-semibold"> Accepted Formats :</span> WORD, PDF, JPG or PNG    
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <form action="/upload" class="dropzone bg-white text-center" id="myDropzone">
+                                <div class="dropzone-title text-center">
+                                    Upload Passport
+                                </div>
+                                <div class="dz-message" data-dz-message>
+                                    <span>
+                                        <img src="assets/img/passport.webp" alt="passport">
+                                    </span>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- visa application form section end -->
 
     <!-- trustpilot section start  -->
     <section class="testimonial-section common-gap common-padding bg-light">
@@ -529,8 +842,56 @@
     </section>
     <!-- faq section end -->
 
+    <!-- partners section start -->
+    <section class="partner-section common-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="heading-main text-center">
+                        <div class="heading position-relative">
+                            Partners we work with
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-6 g-3 mt-2">
+                <div class="col">
+                    <div class="partner-card border">
+                        <img src="assets/img/partner-1.webp" alt="partner" class="h-100 w-100 img-fluid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="partner-card border">
+                        <img src="assets/img/partner-2.webp" alt="partner" class="h-100 w-100 img-fluid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="partner-card border">
+                        <img src="assets/img/partner-3.webp" alt="partner" class="h-100 w-100 img-fluid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="partner-card border">
+                        <img src="assets/img/partner-4.webp" alt="partner" class="h-100 w-100 img-fluid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="partner-card border">
+                        <img src="assets/img/partner-5.webp" alt="partner" class="h-100 w-100 img-fluid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="partner-card border">
+                        <img src="assets/img/partner-6.webp" alt="partner" class="h-100 w-100 img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- partners section end -->
+
     <!-- footer section start  -->
-    <div class="footer-cta common-gap">
+    <div class="footer-cta mt-4">
         <div class="container">
             <div class="row gap-md-0 gap-2">
                 <div class="col-md">
@@ -663,6 +1024,12 @@
     <script src="assets/libs/select2/select2.min.js"></script>
     <!-- glightbox  -->
     <script src="assets/libs/glightbox/glightbox.js"></script>
+    <!-- iti input -->
+    <script src="assets/libs/iti/intlTelInput.min.js"></script>
+    <!-- date library js -->
+    <script src="assets/libs/datepicker/flatpickr.js"></script>
+    <!-- dropzone js  -->
+    <script src="assets/libs/dropzone/dropzone.min.js"></script>
 
     <script>
         AOS.init();
@@ -762,5 +1129,54 @@
             },
         });
     </script>
+
+    <!-- iti input js  -->
+    <script>
+        // const input = document.querySelector("#phone");
+        // window.intlTelInput(input, {
+        //   initialCountry: "us",
+        //   utilsScript: "build/js/utils.js",
+        // }); 
+        // const input = document.querySelector("#inputField");
+        // window.intlTelInput(input, {
+        //   initialCountry: "us",
+        //   utilsScript: "build/js/utils.js",
+        // }); 
+    </script>
+
+    <!-- datepicker js  -->
+    <script>
+        flatpickr("#datepicker", {
+            disable: [
+                function(date) {
+                    // Disable dates before today
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0); // Set hours to start of the day
+                    return (date < today);
+                }
+            ],
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr, instance) {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (selectedDates.length === 1 && selectedDates[0].getTime() === today.getTime()) {
+                    instance.set("disable", []);
+                    document.getElementById("datepicker").classList.add("custom-class");
+                } else {
+                    instance.set("disable", [
+                        function(date) {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            return (date < today);
+                        }
+                    ]);
+                    document.getElementById("datepicker").classList.remove("custom-class");
+                }
+            }
+        });
+    </script>
+    
+      
+    
 </body>
 </html>
