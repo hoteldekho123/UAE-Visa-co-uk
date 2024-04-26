@@ -54,10 +54,10 @@
         padding-top: 115px;
         padding-bottom: 80px;
     }
-    .hero-section .search-card {
-        padding: 25px;
+    .search-card {
+        padding: 20px;
     }
-    .hero-section .hero-heading {
+    .search-card .hero-heading {
         font-size: 20px;
     }
 }
@@ -65,6 +65,10 @@
     .hero-section {
         padding-top: 100px;
         padding-bottom: 80px;
+    }
+    .search-card .theme-btn {
+        width: 100%;
+        margin-top: 5px;
     }
 }
 /* hero section media query end */
@@ -275,3 +279,93 @@
     }
 }
 /* copyright section end */
+
+
+/* breadcrumb section start */
+@media (max-width:767px){
+    .breadcrumb-section .breadcrumb-link, .breadcrumb-section .breadcrumb-link a {
+        font-size: 14px;
+    }
+    .breadcrumb-section {
+        padding-block: 12px;
+    }
+}
+/* breadcrumb section end */
+
+
+/* visa application form section start */
+@media (max-width:991px){
+    .apply-section .form-price {
+        position: unset;
+        text-align: end;
+        margin-top: 8px !important;
+    }
+}
+@media (max-width:767px){
+    .visa-form-section {
+        margin-top: 20px;
+    }
+    .visa-form-section .visa-form-heading {
+        font-size: 24px;
+    }
+    .visa-form-section .visa-form-heading::before {
+        width: 95px;
+    }
+    .visa-form-section .visa-form-card {
+        margin-top: 20px;
+        padding: 14px;
+    }
+    .visa-form-card .form-inner-heading {
+        font-size: 16px;
+    }
+    .visa-form-card .form-price {
+        margin-top: 0;
+    }
+    .uae-input-group .uae-group-label {
+        margin-bottom: 3px;
+        font-size: 14px;
+    }
+    .visa-form-section .upload-heading {
+        font-size: 17px;
+    }
+    .visa-form-section .accepted-format {
+        font-size: 14px;
+    }
+    .visa-form-section .form-btn-main {
+        margin-top: 25px;
+        gap: 12px;
+    }
+    .apply-section .form-price {
+        font-size: 15px;
+    }
+}
+@media (max-width:576px){
+    .visa-form-section .visa-form-heading {
+        font-size: 19px;
+    }
+    .visa-form-section .visa-form-heading::before {
+        width: 75px;
+    }
+}
+/* visa application form section end */
+
+
+/* ***** fujairah visa page css start ***** */
+
+/* hero section start */
+@media (max-width:767px){
+    .country-hero-section {
+        height: auto;
+        padding-top: 85px;
+        padding-bottom: 80px;
+    }
+}
+@media (max-width:576px){
+    .country-hero-section {
+        padding-top: 60px;
+        padding-bottom: 70px; 
+    }
+}
+/* hero section end */
+
+/* ***** fujairah visa page css end ***** */

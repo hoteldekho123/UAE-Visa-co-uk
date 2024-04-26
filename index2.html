@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Label Focus Example</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .form-group {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.form-control {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.label-focused {
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  background-color: #fff;
-  padding: 0 5px;
-  font-size: 12px;
-  color: #333;
-  transition: top 0.3s, left 0.3s, font-size 0.3s;
-}
-
-.label-focused input {
-  padding-top: 20px;
-}
-
-.input-filled + .label-focused {
-  top: -30px;
-  left: 0;
-  font-size: 10px;
-}
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Upload</title>
+<style>
+    .dropzone {
+        border: 2px dashed #aaa;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .file-display {
+        margin-top: 10px;
+    }
+</style>
 </head>
 <body>
-  <div class="form-group">
 
+<div class="dropzone" id="dropzone">
+    Drop file here
+</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const inputField = document.getElementById("inputField");
-  const inputLabel = document.getElementById("inputLabel");
+<div class="file-display" id="fileDisplay">
+    <!-- File will be displayed here -->
+</div>
 
-  inputField.addEventListener("focus", function() {
-    inputLabel.classList.add("label-focused");
-  });
+<script>
+    // Get dropzone element
+    const dropzone = document.getElementById('dropzone');
+    // Get file display element
+    const fileDisplay = document.getElementById('fileDisplay');
+    // Variable to store uploaded file
+    let uploadedFile = null;
 
-  inputField.addEventListener("blur", function() {
-    if (!inputField.value.trim()) {
-      inputLabel.classList.remove("label-focused");
+    // Function to handle file drop
+    function handleFileDrop(e) {
+        e.preventDefault();
+        const file = e.dataTransfer.files[0];
+        displayFile(file);
     }
-  });
 
-  inputField.addEventListener("input", function() {
-    if (inputField.value.trim()) {
-      inputLabel.classList.add("input-filled");
-    } else {
-      inputLabel.classList.remove("input-filled");
+    // Function to handle file input change
+    function handleFileInputChange(e) {
+        const file = e.target.files[0];
+        displayFile(file);
     }
-  });
-});
 
-  </script>
+    // Function to display file
+    function displayFile(file) {
+        // Remove previously displayed file
+        if (uploadedFile) {
+            URL.revokeObjectURL(uploadedFile);
+        }
+
+        // Display new file
+        const fileURL = URL.createObjectURL(file);
+        const fileName = file.name;
+        const fileSize = file.size;
+        const fileDiv = document.createElement('div');
+        fileDiv.innerHTML = `<p>${fileName} - ${fileSize} bytes</p>`;
+        fileDisplay.innerHTML = '';
+        fileDisplay.appendChild(fileDiv);
+
+        uploadedFile = fileURL;
+    }
+
+    // Event listeners
+    dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+    dropzone.addEventListener('drop', handleFileDrop);
+    dropzone.addEventListener('click', () => {
+        document.getElementById('fileInput').click();
+    });
+
+    const fileInput = document.createElement('input');
+    fileInput.setAttribute('type', 'file');
+    fileInput.setAttribute('id', 'fileInput');
+    fileInput.style.display = 'none';
+    fileInput.addEventListener('change', handleFileInputChange);
+    document.body.appendChild(fileInput);
+</script>
+
 </body>
 </html>

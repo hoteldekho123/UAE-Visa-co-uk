@@ -13,7 +13,7 @@
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.06);
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 600;
   background-color: white;
   width: 100%;
 }
@@ -145,7 +145,7 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.397);
 } 
-.hero-section .hero-heading {
+.search-card .hero-heading {
   font-size: 27px;
   font-weight: 700;
   color: #fff;
@@ -204,7 +204,7 @@
   font-size: 14px;
   color: #333;
 }
-.hero-section .search-card {
+.search-card {
   background-color: #ffff;
   padding: 30px;
 }
@@ -213,7 +213,7 @@
   font-weight: 700;
   margin-bottom: 6px;
 }
-.hero-section .theme-btn {
+.search-card .theme-btn {
   height: 44px;
   border-radius: 6px;
 }
@@ -577,7 +577,7 @@
 .faq-section .accordion-button {
   font-size: 16px;
   font-weight: 700;
-  padding-right: 25px !important;
+  padding-right: 28px !important;
 }
 .faq-section .accordion-body p {
   margin-bottom: 10px;
@@ -740,7 +740,6 @@
 }
 .testimonial-card .card-para p {
   display: inline;
-
 }
 .testimonial-section .testimonial-card .testimonial-footer {
   padding: 15px;
@@ -923,8 +922,9 @@
 }
 .visa-form-card .form-price {
   font-size: 20px;
-  margin-top: 21px;
+  margin-top: 35px;
   font-weight: 700;
+  color: var(--theming1);
 }
 .uae-input-group .iti {
   width: 100%;
@@ -984,48 +984,56 @@
 .visa-form-section .accepted-format {
   font-size: 15px;
 }
-
-.input-effect {
+.visa-form-section .form-note-card {
+  padding: 10px;
 }
-.select-form::before {
-  content: "\f107"; 
-  font-family: FontAwesome;
-  position: absolute;
-  right: 5px;
-  top: 25px;
-  font-size: 15px;
-}
-.input-effect .form-input {
-  height: 52px;
-  padding-top: 22px !important;
-  font-size: 15px;
-  color: #000;
-  border-color: #adadad !important;
-}
-.input-effect .form-input:focus ~ .focus-border {
-  width: 100%;
-}
-.input-effect .form-title {
-  left: 0;
-  font-weight: 600;
-  top: 44%;
-  font-size: 15px;
-  line-height: normal;
-  transition: all 0.2s ease-in-out;
-}
-.input-effect .form-input:focus ~ .form-title,
-.input-effect .form-input:not([value=""]) ~ .form-title {
-  top: 0;
-  color: var(--theming1);
+.visa-form-section .form-note-card .file-note {
   font-size: 14px;
+  line-height: 27px;
 }
-.input-effect .focus-border {
-  height: 2px;
-  width: 0;
+.visa-form-section .form-note-card .file-note a {
+  color: var(--theming1);
+  font-weight: 600;
+}
+.visa-form-section .form-btn-main {
+  margin-top: 30px;
+  gap: 25px;
+}
+.visa-form-section .form-btn {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  height: 43px;
+  color: #fff !important;
+  width: 245px;
+  border: 0;
+  gap: 7px;
   transition: all 0.3s ease-in-out;
-  background-color: var(--theming1);
-  bottom: 0;
-  left: 0;
+  outline: none;
+  background: linear-gradient(to bottom, #8e0a0a 0, #b40d14 99%) !important;
+}
+.visa-form-section .form-btn:hover {
+  letter-spacing: 0.5px;
+}
+.visa-form-section .form-btn.form-btn-one {
+  background: #333 !important;
+}
+.visa-form-section .form-btn.form-btn-one:hover {
+  background-color: #181818 !important;
+  
+}
+.visa-form-section .form-btn.form-btn-three {
+  background: var(--theming1) !important;
+}
+.visa-form-section .form-btn img {
+  height: 17px;
+  filter: invert(1);
+}
+.apply-section .form-price {
+  position: absolute;
+  right:10px;
+  top: 20px;
+  font-size: 16px;
 }
 
 /* visa application form section end */
@@ -1037,7 +1045,7 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 6px;
   padding: 12px !important;
-  height: 180px !important;
+  min-height: 180px !important;
 }
 .dropzone .dropzone-title {
   font-weight: 700;
@@ -1047,15 +1055,73 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.dropzone .dropzone-img {
+  height: 65px;
+}
 /* dropzone box end */
 
 
 /* partners section start */
-.partner-section {
-
-}
 .partner-section .partner-card {
   padding: 15px;
   border-radius: 10px;
 }
 /* partners section end */
+
+
+/* add another table section start */
+.table-section table, 
+.table-section th, 
+.table-section td {
+  border: 1px solid rgb(209, 209, 209);
+  border-collapse: collapse;
+}
+/* add another table section end */
+
+
+
+/* ***** fujairah visa page css start ***** */
+
+/* hero section start */
+.country-hero-section {
+  background: url(../img/dubai-bg-2.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+/* hero section end */
+
+/* Types of Fujairah Visas We Offer section start */
+.visatype-card {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 10px;
+}
+.visatype-card .visatype-heading {
+  font-size: 18px;
+  font-weight: 700;
+}
+.visatype-card .nav-link {
+  font-weight: 600;
+  font-size: 15px;
+}
+.visatype-card .visatype-card-head {
+  padding: 12px;
+}
+.visatype-card .visatype-card-body {
+  padding: 12px;
+}
+.visatype-card .nav-link {
+  color: #000;
+  font-weight: 600;
+  background-color:#f1f1f1;
+}
+.visatype-card .visatype-content p {
+  font-size: 15px;
+  line-height: 28px;
+}
+.visatype-card .nav-link.active {
+  background-color: var(--theming1);
+}
+/* Types of Fujairah Visas We Offer section end */
+
+/* ***** fujairah visa page css end ***** */

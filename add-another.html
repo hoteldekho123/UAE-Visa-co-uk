@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAE Visa - Types Of Visa</title>
+    <title>UAE Visa - Visa Application Form</title>
     <!-- jquery  -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- bootstrap css  -->
@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="assets/libs/select2/select2.min.css">
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- iti input -->
+    <link rel="stylesheet" href="assets/libs/iti/intlTelInput.min.css">
+    <!-- date picker css  -->
+    <link rel="stylesheet" href="assets/libs/datepicker/flatpickr.min.css">
+    <!-- dropzone css  -->
+    <link rel="stylesheet" href="assets/libs/dropzone/dropzone.min.css">
     <!-- font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,68 +110,165 @@
     </nav>
     <!-- navbar end -->
 
-    <!-- page heading section start -->
-    <section class="page-heading-section position-relative">
+
+    <!-- visa application form section start -->
+    <section class="visa-form-section">
         <div class="container">
-            <div class="page-heading-inner position-relative z-1">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <div class="page-heading">
-                            About Us
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="visa-form-heading position-relative">
+                        Dubai Visa Application Form
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="visa-form-card bg-light">
+                        <div class="form-inner-heading text-center">
+                            Please Provide The Following Details
+                        </div>
+                        <form action="">
+                            <div class="row mt-md-3 mt-2 g-3">
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Applicant Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Applicant Full Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Passport Number <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Passport Number ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Profession  <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Profession ">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 mt-4 pt-md-3 pt-1">
+                    <div class="fw-bold text-center upload-heading">
+                        Please Upload The Following Documents
+                    </div>
+                    <hr class="my-2">
+                    <div class="accepted-format">
+                       <span class="fw-semibold"> Accepted Formats :</span> WORD, PDF, JPG or PNG    
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="row g-3">
+                        <div class="col-lg-3 col-md-4">
+                            <form action="/upload" class="dropzone bg-white text-center" id="myDropzone">
+                                <div class="dropzone-title text-center">
+                                    Upload Passport
+                                </div>
+                                <div class="dz-message" data-dz-message>
+                                    <span>
+                                        <img src="assets/img/passport.svg" alt="passport" class="dropzone-img">
+                                    </span>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-lg-3 col-md-4">
+                            <form action="/upload" class="dropzone bg-white text-center" id="myDropzone">
+                                <div class="dropzone-title text-center">
+                                    Upload Photo
+                                </div>
+                                <div class="dz-message" data-dz-message>
+                                    <span>
+                                        <img src="assets/img/upload-photo.svg" alt="photo" class="dropzone-img">
+                                    </span>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-lg-3 col-md-4">
+                            <form action="/upload" class="dropzone bg-white text-center" id="myDropzone">
+                                <div class="dropzone-title text-center">
+                                    Other Document/ National ID
+                                </div>
+                                <div class="dz-message" data-dz-message>
+                                    <span>
+                                        <img src="assets/img/other-document.svg" alt="other document" class="dropzone-img">
+                                    </span>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4 pt-md-2">
+                    <div class="form-note-card bg-light border rounded-2">
+                        <p class="file-note mb-0"><b>NOTE:</b> Upload of passport and photograph are not mandatory to complete the visa application form. You can provide us these documents later also on email: <a href="mailto:info@onlinedubaivisa.com">info@onlinedubaivisa.com</a> or on WhatsApp <a href="https://api.whatsapp.com/send?phone=971-565016625"> +971-565016625 </a></p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class=" d-flex align-items-center justify-content-center flex-wrap form-btn-main">
+                        <div class="">
+                            <button type="button" class="btn form-btn form-btn-three d-flex align-items-center justify-content-center" id="anotherapplicant">
+                                Submit & Processed To Pay 
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="">
+                            <button type="button" class="btn form-btn form-btn-one d-flex align-items-center justify-content-center" id="anotherapplicant">
+                                Add another Applicant
+                                <img src="assets/img/add-user.svg" alt="add another" class="">
+                            </button>
+                        </div>
+                        <div class="">
+                            <button type="button" class="btn form-btn form-btn-two d-flex align-items-center justify-content-center" id="saveapplication">
+                                Skip & Processed To Pay <i class="fa-solid fa-arrow-right"></i> 
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- page heading section end -->
+    <!-- visa application form section end -->
 
-    <!-- breadcrumb section start -->
-    <div class="breadcrumb-section">
+
+    <!-- add another table section start -->
+    <section class="table-section common-gap">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <ul class="list-unstyled breadcrumb-list d-flex align-items-center m-0">
-                        <li class="breadcrumb-link d-flex align-items-center">
-                            <a href="index.html" class="text-decoration-none d-flex align-items-center">
-                                <i class="fa-solid fa-house-chimney home-icon"></i>
-                                Home
-                            </a>
-                        </li>
-                        <li class="breadcrumb-link d-flex align-items-center">
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                        </li>
-                        <li class="breadcrumb-link d-flex align-items-center active">
-                           About Us
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb section end -->
-
-
-    <!-- types of visa section start -->
-    <section class="type-visa-section mt-md-4 mt-3">
-        <div class="container">
-            <div class="row content-section">
-                <div class="col-12">
-                    <div class="content-card">
-                        <div class="read_more_text">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tempora quis consectetur eveniet id deserunt repellat ad. Odio molestias tempore odit incidunt quibusdam ab eligendi velit culpa maxime nostrum inventore ea quod, neque atque quaerat debitis? Veritatis libero voluptatem molestiae.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tempora quis consectetur eveniet id deserunt repellat ad. Odio molestias tempore odit incidunt quibusdam ab eligendi velit culpa maxime nostrum inventore ea quod, neque atque quaerat debitis? Veritatis libero voluptatem molestiae.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tempora quis consectetur eveniet id deserunt repellat ad. Odio molestias tempore odit incidunt quibusdam ab eligendi velit culpa maxime nostrum inventore ea quod, neque atque quaerat debitis? Veritatis libero voluptatem molestiae.</p>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table mb-0 text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="bg-light px-3">#</th>
+                                    <th class="bg-light px-3">First Name</th>
+                                    <th class="bg-light px-3">Passport No.</th>
+                                    <th class="bg-light px-3">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="px-3">1.</td>
+                                    <td class="px-3">dfdfd dfdfd</td>
+                                    <td class="px-3">45446463554</td>
+                                    <td class="px-3">260 USD</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- types of visa section end -->
+    <!-- add another table section end -->
 
     <!-- partners section start -->
     <section class="partner-section common-gap">
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -346,104 +449,50 @@
     <script src="assets/libs/select2/select2.min.js"></script>
     <!-- glightbox  -->
     <script src="assets/libs/glightbox/glightbox.js"></script>
+    <!-- iti input -->
+    <script src="assets/libs/iti/intlTelInput.min.js"></script>
+    <!-- date library js -->
+    <script src="assets/libs/datepicker/flatpickr.js"></script>
+    <!-- dropzone js  -->
+    <script src="assets/libs/dropzone/dropzone.min.js"></script>
 
     <script>
         AOS.init();
     </script>
 
-    <!-- swiper js  -->
+    <!-- datepicker js  -->
     <script>
-        var swiper = new Swiper(".reviewslider", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            loop:true,
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-            },
+        flatpickr("#datepicker", {
+            disable: [
+                function(date) {
+                    // Disable dates before today
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0); // Set hours to start of the day
+                    return (date < today);
+                }
+            ],
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr, instance) {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (selectedDates.length === 1 && selectedDates[0].getTime() === today.getTime()) {
+                    instance.set("disable", []);
+                    document.getElementById("datepicker").classList.add("custom-class");
+                } else {
+                    instance.set("disable", [
+                        function(date) {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            return (date < today);
+                        }
+                    ]);
+                    document.getElementById("datepicker").classList.remove("custom-class");
+                }
+            }
         });
     </script>
-
-    <script>
-        var swiper = new Swiper(".testimonial", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                },
-                768: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-                },
-                991: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-                },
-            },
-        });
-    </script>   
-
-    <!-- glightbox js  -->
-    <script>
-        var lightbox = GLightbox();
-            lightbox.on('open', (target) => {
-                console.log('lightbox opened');
-            });
-            var lightboxVideo = GLightbox({
-                selector: '.glightbox3'
-            });
-
-    </script>
-
-    <script>
-        var swiper = new Swiper(".mySwiper2", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            loop:true,
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                },
-            },
-        });
-    </script>
+    
+      
+    
 </body>
 </html>

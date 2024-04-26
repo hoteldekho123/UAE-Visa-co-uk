@@ -478,46 +478,24 @@ var lightboxVideo = GLightbox({
 
 
 // dropzone js 
+// Initialize Dropzone
 Dropzone.autoDiscover = false;
 var myDropzone = new Dropzone("#myDropzone", {
-    url: "/upload", 
-    maxFilesize: 5, 
-    acceptedFiles: '.jpg, .jpeg, .png, .gif',
-    dictDefaultMessage: 'Drop files here or click to upload', 
-    addRemoveLinks: true, 
-    init: function() {
-        this.on("success", function(file, response) {
-            console.log("File uploaded successfully!");
-            console.log(response);
-        });
-        this.on("removedfile", function(file) {
-            console.log("File removed: " + file.name);
-        });
-    }
+  url: "/file-upload",
+  // Add custom remove button
+  init: function() {
+    this.on("addedfile", function(file) {
+      var removeButton = Dropzone.createElement("<button class='btn btn-danger'>Remove</button>");
+      var _this = this;
+      removeButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        _this.removeFile(file);
+      });
+      file.previewElement.appendChild(removeButton);
+    });
+  }
 });
 
 
-// input label 
-// JavaScript code
-document.addEventListener("DOMContentLoaded", function() {
-  const inputField = document.getElementById("inputField");
-  const inputLabel = document.getElementById("inputLabel");
 
-  inputField.addEventListener("focus", function() {
-    inputLabel.classList.add("label-focused");
-  });
-
-  inputField.addEventListener("blur", function() {
-    if (!inputField.value.trim()) {
-      inputLabel.classList.remove("label-focused");
-    }
-  });
-
-  inputField.addEventListener("input", function() {
-    if (inputField.value.trim()) {
-      inputLabel.classList.add("input-filled");
-    } else {
-      inputLabel.classList.remove("input-filled");
-    }
-  });
-});
