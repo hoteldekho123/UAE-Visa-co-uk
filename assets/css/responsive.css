@@ -143,6 +143,11 @@
         padding-top: 5px;
         margin-bottom: 6px;
     }
+    .content-section .content-note {
+        font-size: 14px;
+        padding: 7px;
+        line-height: 25px;
+    }
 }
 /* content card section end */
 
@@ -369,3 +374,51 @@
 /* hero section end */
 
 /* ***** fujairah visa page css end ***** */
+
+
+
+/* document required section start */
+@media (max-width:767px){
+    .choose-section .choose-inner {
+        gap: 10px;
+    }
+    .document-required-section .heading {
+        line-height: 29px;
+    }
+    .choose-card {
+        min-height: 50px;
+        gap: 10px;
+        position: relative;
+        overflow: hidden;
+        padding-left: 60px;
+        padding-block: 5px;
+        font-size: 15px;
+        padding-right: 5px;
+    }
+    .choose-card .choose-icon {
+        max-width: 50px;
+        min-width: 50px;
+        height: 200%;
+        padding: 14px;
+        position: absolute;
+        left: 0;
+    }
+}
+/* document required section end */
+
+
+/* important information section start */
+@media (max-width:767px){
+    .impo-info-section .heading {
+        line-height: 29px;
+    }
+    .impo-info-card li {
+        line-height: 25px;
+        font-size: 15px;
+    }
+    .impo-info-card ul {
+        gap: 5px;
+    }
+}
+
+/* important information section end */

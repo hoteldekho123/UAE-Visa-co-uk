@@ -1,3 +1,7 @@
+:root {
+    --theming1 :#d71921;
+    --theming1-hover :#d63606;
+}
 body {
     font-family: "Nunito", sans-serif;
 }
@@ -14,7 +18,7 @@ html, body {
 
 /* heading  */
 .heading {
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 700;
 }
 .heading::before {
@@ -262,6 +266,12 @@ html, body {
         }
     }
 }
+
+@media (max-width:576px){
+    .heading {
+        font-size: 18px;
+    }
+}
 /* media query end */
 
 
@@ -283,13 +293,26 @@ html, body {
     background-color: #3b3b3b54;
 }
 .page-heading-section .page-heading {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 700;
     color: #fff;
+}
+.page-heading-section .page-title {
+    color: #ffff;
+    font-weight: 600;
+}
+.visatype-heading-section {
+    padding-block: 80px;
+    background: url(../img/dubai-bg-4.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 @media (max-width:767px){
     .page-heading-section {
         padding-block: 60px;
+    }
+    .visatype-heading-section {
+        padding-block: 50px;
     }
     .page-heading-section .page-heading {
         font-size: 24px;

@@ -473,6 +473,23 @@
 .pricecard1 .dubai-visa-price .price-one {
   display: none;
 }
+.price-section .price-main-heading {
+  background-color: var(--theming1);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 10px ;
+  font-size: 18px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+/* .price-section .price-main-heading::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  width: 3px;
+  top: 0;
+  background-color: #fff;
+} */
 /* price section end */
 
 
@@ -812,6 +829,13 @@
   flex-direction: column;
   gap: 9px;
 }
+.content-section .content-note {
+  padding: 10px;
+  font-size: 15px;
+}
+.content-section .content-note i {
+  color: var(--theming1);
+}
 /* content section end */
 
 
@@ -1125,3 +1149,50 @@
 /* Types of Fujairah Visas We Offer section end */
 
 /* ***** fujairah visa page css end ***** */
+
+/* document required section start */
+.choose-section .choose-inner {
+  gap: 12px;
+}
+.choose-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  min-height: 50px;
+  font-weight: 700;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.choose-card .choose-icon {
+  width: 50px;
+  height: 50px;
+  padding: 13px;
+}
+.choose-card:hover {
+  transform: translateY(-6px);
+}
+.document-inner {
+  gap: 12px;
+}
+.document-card {
+  border: 1px dashed #aaaaaa;
+  padding: 6px;
+  gap: 10px;
+  font-weight: 700;
+}
+.document-card .document-card-img {
+  height:70px;
+  width: 80px;
+}
+/* document required section end */
+
+
+/* important information section start */
+.impo-info-card {
+  padding: 10px;
+}
+.impo-info-card ul {
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
+  gap: 8px;
+}
+/* important information section end */
