@@ -420,5 +420,34 @@
         gap: 5px;
     }
 }
-
 /* important information section end */
+
+
+/* blog detail page start */
+@media (max-width:767px){
+    .blog-detail-section .blog-detail-img {
+        height: 270px;
+    }
+    .blog-detail-section .blog-detail-inner {
+        padding: 8px 0px 0;
+    }
+    .blog-detail-section .blog-detail-heading {
+        font-size: 19px;
+    }
+    .blog-detail-section .blog-detail-content h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        padding-top: 0px ;
+    }
+    .blog-detail-section .blog-detail-content h3 {
+        font-size: 16px;
+        margin-bottom: 7px;
+        padding-top: 0px ;
+    }
+}
+@media (max-width:576px){
+    .blog-detail-section .blog-detail-img {
+        height: 210px;
+    }
+}
+/* blog detail page end */
