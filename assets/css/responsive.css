@@ -693,3 +693,26 @@
     }
 }
   /* how to apply section end */
+
+
+  /* thank you section start */
+@media (max-width:767px){
+    .thanks-section {
+        margin-top: 45px;
+    }
+    .thanks-card .thanks-heading {
+        font-size: 22px;
+        padding-bottom: 3px;
+    }
+    .thanks-card {
+        padding: 15px;
+    }
+    .thanks-card .thanks-title {
+        margin-top: 16px;
+    }
+    .thanks-card .thanks-icon {
+        font-size: 95px;
+        line-height: 95px;
+    }
+}
+  /* thank you section end */

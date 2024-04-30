@@ -1,6 +1,6 @@
 :root {
   --theming1 :#d71921;
-  --theming1-hover :#d63606;
+  --theming1-hover :#fc0b17;
 }
 
 /* navbar css start */
@@ -1663,21 +1663,87 @@
 /* how to apply section end */
 
 
-/* visa type page start  */
-.type-visa-section {
-  
+/* thank you section start */
+.thanks-section {
+  margin-top: 60px;
 }
+.thanks-card {
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.thanks-card .thanks-icon {
+  color: #31B63A;
+  font-size: 110px;
+  line-height: 110px;
+}
+.thanks-card .thanks-heading {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 8px;
+}
+.thanks-card .thanks-heading::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: #31B63A;
+  height: 3px;
+  border-radius: 5px;
+  width: 80px;
+}
+.thanks-card .thanks-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+.thanks-card .thanks-title-two {
+  font-size: 15px;
+  line-height: 25px;
+}
+.thanks-card .thanks-btn {
+  background-color:#31B63A;
+  color: #fff;
+  font-weight: 700;
+  gap: 6px;
+  transition: all 0.3s ease-in-out;
+  padding: 7px 20px;
+  border-radius: 5px;
+}
+.thanks-card .thanks-btn i {
+  transition: all 0.3s ease-in-out;
+}
+.thanks-card .thanks-btn:hover {
+  background-color: #0caa17;
+}
+.thanks-card .thanks-btn:hover i {
+  transform: translateX(-4px);
+}
+/* thank you section end */
 
-.price-table, 
-.price-table th, 
-.price-table td {
-  border: 1px solid rgb(180, 180, 180);
-  border-collapse: collapse;
+
+/* error page start */
+.error-section {
+
 }
-.price-table th:nth-child(1) {
-  border-radius: 5px 0 0 0 ;
+.error-section .thanks-icon {
+  height: 140px;
 }
-.price-table th:nth-child(4) {
-  border-radius: 0 5px 0 0;
+.error-section .thanks-heading {
+  color: var(--theming1 );
+  padding-bottom: 5px;
+  margin-top: 25px;
 }
-/* visa type page end */
+.error-section .thanks-heading::before {
+  background-color: var(--theming1);
+}
+.error-section .thanks-btn {
+  background-color: var(--theming1);
+}
+.error-section .thanks-btn:hover {
+  background-color: var(--theming1-hover);
+}
+/* error page end */
