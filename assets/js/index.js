@@ -466,6 +466,7 @@ function readMore2(ele, eve) {
 }
 
 
+
 // glightbox 
 var lightbox = GLightbox();
 lightbox.on('open', (target) => {
@@ -496,6 +497,11 @@ var myDropzone = new Dropzone("#myDropzone", {
     });
   }
 });
+
+
+
+// date input js 
+
 
 
 

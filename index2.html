@@ -3,84 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Upload</title>
+<title>Toggle Class</title>
 <style>
-    .dropzone {
-        border: 2px dashed #aaa;
-        padding: 20px;
-        text-align: center;
-        cursor: pointer;
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        display: inline-block;
+        margin-right: 20px;
     }
-    .file-display {
-        margin-top: 10px;
+    .hidden {
+        display: none;
     }
 </style>
 </head>
 <body>
 
-<div class="dropzone" id="dropzone">
-    Drop file here
-</div>
-
-<div class="file-display" id="fileDisplay">
-    <!-- File will be displayed here -->
-</div>
+<div class="box" id="box1"></div>
+<div class="box hidden" id="box2"></div>
+<button id="toggleButton">Toggle Class</button>
 
 <script>
-    // Get dropzone element
-    const dropzone = document.getElementById('dropzone');
-    // Get file display element
-    const fileDisplay = document.getElementById('fileDisplay');
-    // Variable to store uploaded file
-    let uploadedFile = null;
-
-    // Function to handle file drop
-    function handleFileDrop(e) {
-        e.preventDefault();
-        const file = e.dataTransfer.files[0];
-        displayFile(file);
-    }
-
-    // Function to handle file input change
-    function handleFileInputChange(e) {
-        const file = e.target.files[0];
-        displayFile(file);
-    }
-
-    // Function to display file
-    function displayFile(file) {
-        // Remove previously displayed file
-        if (uploadedFile) {
-            URL.revokeObjectURL(uploadedFile);
-        }
-
-        // Display new file
-        const fileURL = URL.createObjectURL(file);
-        const fileName = file.name;
-        const fileSize = file.size;
-        const fileDiv = document.createElement('div');
-        fileDiv.innerHTML = `<p>${fileName} - ${fileSize} bytes</p>`;
-        fileDisplay.innerHTML = '';
-        fileDisplay.appendChild(fileDiv);
-
-        uploadedFile = fileURL;
-    }
-
-    // Event listeners
-    dropzone.addEventListener('dragover', (e) => {
-        e.preventDefault();
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        // Toggle class on the button itself
+        this.classList.toggle('active');
+        // Toggle class on other div
+        document.getElementById('box2').classList.toggle('hidden');
     });
-    dropzone.addEventListener('drop', handleFileDrop);
-    dropzone.addEventListener('click', () => {
-        document.getElementById('fileInput').click();
-    });
-
-    const fileInput = document.createElement('input');
-    fileInput.setAttribute('type', 'file');
-    fileInput.setAttribute('id', 'fileInput');
-    fileInput.style.display = 'none';
-    fileInput.addEventListener('change', handleFileInputChange);
-    document.body.appendChild(fileInput);
 </script>
 
 </body>

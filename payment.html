@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAE Visa - Blog</title>
+    <title>UAE Visa - Payment</title>
     <!-- jquery  -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- bootstrap css  -->
@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- common css  -->
     <link rel="stylesheet" href="assets/css/common.css">
-    <!-- blog css  -->
-    <link rel="stylesheet" href="assets/css/blog.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- aos css  -->
@@ -47,8 +45,8 @@
     </div>
     <!-- scroll to top button end -->
 
-     <!-- navbar start -->
-     <nav class="navbar navbar-expand-xl fixed-top navbar-two" id="navbar" aria-label="Offcanvas navbar large">
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-xl fixed-top navbar-two" id="navbar" aria-label="Offcanvas navbar large">
         <div class="container">
             <a class="navbar-logo" href="index.html">
                 <img src="assets/img/logo.png" alt="logo" class="h-100 w-100 img-fluid">
@@ -156,7 +154,7 @@
                 <div class="row text-center">
                     <div class="col-12">
                         <div class="page-heading">
-                            Blog Details
+                            Payment
                         </div>
                     </div>
                 </div>
@@ -166,11 +164,11 @@
     <!-- page heading section end -->
 
     <!-- breadcrumb section start -->
-    <section class="breadcrumb-section">
+    <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <ul class="list-unstyled breadcrumb-list d-flex flex-wrap align-items-center m-0">
+                    <ul class="list-unstyled breadcrumb-list d-flex align-items-center m-0">
                         <li class="breadcrumb-link d-flex align-items-center">
                             <a href="index.html" class="text-decoration-none d-flex align-items-center">
                                 <i class="fa-solid fa-house-chimney home-icon"></i>
@@ -180,257 +178,130 @@
                         <li class="breadcrumb-link d-flex align-items-center">
                             <i class="fa-solid fa-arrow-right-long"></i>
                         </li>
-                        <li class="breadcrumb-link d-flex align-items-center">
-                            <a href="blog.html" class="text-decoration-none d-flex align-items-center">
-                                Blog
-                            </a>
-                        </li>
-                        <li class="breadcrumb-link d-flex align-items-center">
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                        </li>
                         <li class="breadcrumb-link d-flex align-items-center active">
-                            Daily food cost in Dubai: Discover the best food option
+                            Payment
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!-- breadcrumb section end -->
 
-    <!-- blog detail section start -->
-    <section class="blog-detail-page mt-md-4 mt-3">
+    <!-- payment section start  -->
+    <section class="payment-section mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="blog-detail-section">
-                        <div class="blog-detail-img overflow-hidden rounded-2">
-                            <img src="assets/img/blog2.webp" alt="blog" class="h-100 w-100 img-fluid object-fit-cover">
-                        </div>
-                        <div class="blog-detail-inner">
-                            <div class=" row align-items-center justify-content-between flex-sm-row flex-column gap-sm-0 gap-3">
-                                <ul class="list-unstyled col blog-detail-list order-sm-1 order-2 mb-0 d-flex align-items-center justify-content-sm-start justify-content-center">
-                                    <li>
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        14 Feb ,2023
-                                    </li>
-                                    <li>
-                                        <i class="fa-regular fa-eye"></i>
-                                        232
-                                    </li>
-                                </ul>
-                                <div class="d-flex col-auto align-items-center order-sm-2 order-1 common-btn-section justify-content-center">
-                                    <a href="visa-application-form.html" class="common-blink-btn text-decoration-none ">Apply UAE Visa</a>
+                <div class="col-lg-7 col-md-10 mx-auto">
+                    <form action="">
+                        <div class="payment-card bg-light border rounded-3">
+                            <div class="payment-img mx-auto text-center">
+                                <img src="assets/img/payment-page.webp" alt="payment" class="h-100 img-fluid">
+                            </div>
+                            <div class="payment-heading text-center position-relative fw-bold">
+                                Please Fill Below Detail :-
+                            </div>
+                            <div class="row mt-3 gap-3">
+                                <div class="col-12">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Email Address : <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control shadow-none uae-input" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label d-flex flex-column">
+                                            <span>Payable Amount : <span class="text-danger">*</span></span>
+                                            <span class="label-title">(Pay in AED, USD,GBP)</span>
+                                        </label>
+                                        <div class="d-flex position-relative w-100 currency-input">
+                                            <select class="form-select h-100 border-0 border-end bg-transparent rounded-0 position-absolute shadow-none w-auto" aria-label="Default select example">
+                                                <option value="1"> USD</option>
+                                                <option value="2">AED</option>
+                                                <option value="3">GBP</option>
+                                              </select>
+                                            <input type="text" class="form-control shadow-none uae-input w-100" placeholder="Enter Payable Amount">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">First Name : <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Last Name : <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">Address : <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="Address">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="uae-input-group">
+                                        <label for="" class="uae-group-label">City : <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control shadow-none uae-input" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <div class="text-center payment-check-title d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" name="" id="terms">
+                                        <label for="terms">I Agree To <a href="" class="text-decoration-none">Terms Of Agreement</a></label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="blog-detail-heading mt-md-4 mt-2">
-                                Daily food cost in Dubai: Discover the best food option
+                            <div class="payment-heading payment-heading-two pt-1 text-center position-relative fw-bold">
+                                Select A Payment Method
                             </div>
-                            <div class="blog-detail-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui repudiandae culpa, magnam ducimus illum aut fugiat eveniet, saepe dolorum doloremque ea assumenda non neque? Maiores dolore fuga iusto ducimus laboriosam.</p>
-                                <h2>Discover the best</h2>
-                                <ul>
-                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas vel labore reprehenderit sit sint sed iste aliquam at quidem ut rerum libero excepturi est vitae non ratione, fuga quasi?</li>
-                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas vel labore reprehenderit sit sint sed iste aliquam at quidem ut rerum libero excepturi est vitae non ratione, fuga quasi?</li>
-                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas vel labore reprehenderit sit sint sed iste aliquam at quidem ut rerum libero excepturi est vitae non ratione, fuga quasi?</li>
-                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas vel labore reprehenderit sit sint sed iste aliquam at quidem ut rerum libero excepturi est vitae non ratione, fuga quasi?</li>
-                                </ul>
-                                <h3> Daily food cost in</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium est debitis neque quos natus, placeat expedita pariatur, magni voluptas eligendi accusamus nulla. Vero eveniet quo voluptas nesciunt, qui debitis tempora!</p>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="row gx-3 mt-md-3 mt-2 payment-check-main">
+                                <div class="col-md-4">
+                                    <input type="radio" name="payment" id="mamopay" class="payment-input" hidden>
+                                    <label for="mamopay" class="payment-inner-card rounded-3 bg-white d-flex align-items-center">
+                                        <span class="d-flex align-items-center justify-content-center rounded-circle payment-inner-check">
+                                            <i class="fa-solid fa-check"></i>
+                                        </span>
+                                        <img src="assets/img/mamo-pay-icon.webp" alt="mamo pay">
+                                    </label>
 
-                </div>
-                <div class="col-lg-4 mt-lg-0 mt-4">
-                    <div class="blog-sidebar rounded-2 bg-ight">
-                        <div class="blog-sidebar-heading border-bottom">
-                            Recent Post
-                        </div>
-                        <div class="row g-3 blog-sidebar-inner mt-1">
-                            <div class="col-lg-12 col-md-6">
-                                <div class="sidebar-card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <a href="" class="sidebar-card-img d-block overflow-hidden">
-                                                <img src="assets/img/blog3.webp" alt="blog" class="h-100 w-100 img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 ps-0">
-                                            <div class="sidebar-card-heading">
-                                                <a href="" class="text-decoration-none d-block w-100">
-                                                    Daily food cost in Dubai: Discover the best food option
-                                                </a>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-2 gap-3">
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-calendar-days"></i>
-                                                    14 Feb 2023
-                                                </div>
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                   423
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                                
-                            </div>
-                            <div class="col-lg-12 col-md-6">
-                                <div class="sidebar-card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <a href="" class="sidebar-card-img d-block overflow-hidden">
-                                                <img src="assets/img/blog4.webp" alt="blog" class="h-100 w-100 img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 ps-0">
-                                            <div class="sidebar-card-heading">
-                                                <a href="" class="text-decoration-none d-block w-100">
-                                                    Dubai Visa Photo Size Requirements 2024-2025
-                                                </a>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-2 gap-3">
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-calendar-days"></i>
-                                                    14 Feb 2023
-                                                </div>
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                   423
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="col-lg-12 col-md-6">
-                                <div class="sidebar-card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <a href="" class="sidebar-card-img d-block overflow-hidden">
-                                                <img src="assets/img/dubai-bg-4.jpg" alt="blog" class="h-100 w-100 img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 ps-0">
-                                            <div class="sidebar-card-heading">
-                                                <a href="" class="text-decoration-none d-block w-100">
-                                                    DA complete detailed information about -What is unified GCC tourist visa?
-                                                </a>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-2 gap-3">
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-calendar-days"></i>
-                                                    14 Feb 2023
-                                                </div>
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                   423
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="col-lg-12 col-md-6">
-                                <div class="sidebar-card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <a href="" class="sidebar-card-img d-block overflow-hidden">
-                                                <img src="assets/img/dubai-bg-2.jpg" alt="blog" class="h-100 w-100 img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 ps-0">
-                                            <div class="sidebar-card-heading">
-                                                <a href="" class="text-decoration-none d-block w-100">
-                                                    Daily food cost in Dubai: Discover the best food option
-                                                </a>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-2 gap-3">
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-calendar-days"></i>
-                                                    14 Feb 2023
-                                                </div>
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                   423
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="col-lg-12 col-md-6">
-                                <div class="sidebar-card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <a href="" class="sidebar-card-img d-block overflow-hidden">
-                                                <img src="assets/img/dubai-bg-1.jpg" alt="blog" class="h-100 w-100 img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 ps-0">
-                                            <div class="sidebar-card-heading">
-                                                <a href="" class="text-decoration-none d-block w-100">
-                                                    Dubai Visa Photo Size Requirements 2024-2025
-                                                </a>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-2 gap-3">
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-calendar-days"></i>
-                                                    14 Feb 2023
-                                                </div>
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                   423
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="col-lg-12 col-md-6">
-                                <div class="sidebar-card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <a href="" class="sidebar-card-img d-block overflow-hidden">
-                                                <img src="assets/img/dubai-bg-5.jpg" alt="blog" class="h-100 w-100 img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 ps-0">
-                                            <div class="sidebar-card-heading">
-                                                <a href="" class="text-decoration-none d-block w-100">
-                                                    DA complete detailed information about -What is unified GCC tourist visa?
-                                                </a>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-2 gap-3">
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-calendar-days"></i>
-                                                    14 Feb 2023
-                                                </div>
-                                                <div class="blog-sidebar-icon">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                   423
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col-md-4">
+                                    <input type="radio" name="payment" id="network" class="payment-input" hidden>
+                                    <label for="network" class="payment-inner-card rounded-3 bg-white d-flex align-items-center">
+                                        <span class="d-flex align-items-center justify-content-center rounded-circle payment-inner-check">
+                                            <i class="fa-solid fa-check"></i>
+                                        </span>
+                                        <img src="assets/img/network_gateway_icon.webp" alt="network">
+                                    </label>
 
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" name="payment" id="ccvenue" class="payment-input" hidden>
+                                    <label for="ccvenue" class="payment-inner-card rounded-3 bg-white d-flex align-items-center">
+                                        <span class="d-flex align-items-center justify-content-center rounded-circle payment-inner-check">
+                                            <i class="fa-solid fa-check"></i>
+                                        </span>
+                                        <img src="assets/img/ccavenue_icon.webp" alt="ccvenue">
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mt-3 justify-content-center">
+                                <a href="" class="theme-btn w-100 shadow-sm d-inline-flex w-auto rounded-5 justify-content-center align-items-center">
+                                    Pay With Debit Card/Credit Card <i class="fa-solid fa-angles-right"></i>    
+                                </a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- blog detail section end -->
+    <!-- payment section end -->
 
     <!-- partners section start -->
     <section class="partner-section common-gap">
@@ -624,35 +495,6 @@
         AOS.init();
     </script>
 
-    <!-- swiper js  -->
-    <script>
-        var swiper = new Swiper(".reviewslider", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            loop:true,
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-            },
-        });
-    </script>
-
     <!-- navbar drop js  -->
     <script>
         document.getElementById('navbtn').addEventListener('click', function() {
@@ -662,71 +504,6 @@
             document.getElementById('navmenu').classList.toggle('hidden');
         });
     </script>
-
-    <script>
-        var swiper = new Swiper(".testimonial", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                },
-                768: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-                },
-                991: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-                },
-            },
-        });
-    </script>   
-
-    <!-- glightbox js  -->
-    <script>
-        var lightbox = GLightbox();
-            lightbox.on('open', (target) => {
-                console.log('lightbox opened');
-            });
-            var lightboxVideo = GLightbox({
-                selector: '.glightbox3'
-            });
-
-    </script>
-
-    <script>
-        var swiper = new Swiper(".mySwiper2", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            loop:true,
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                },
-            },
-        });
-    </script>
+  
 </body>
 </html>

@@ -70,72 +70,6 @@
 /* blog home section css end */
 
 
-/* blog main card section start */
-.blog-main-card {
-    border-radius: 9px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-.blog-main-card .blog-main-card-img {
-    height: 340px;
-}
-.blog-main-card .blog-main-card-img img {
-    transition: all 0.3s ease-in-out;
-    object-fit: cover;
-}
-.blog-main-card:hover .blog-main-card-img img {
-    transform: scale(1.1);
-}
-.blog-main-card .blog-main-card-content {
-    padding: 15px;
-}
-.blog-main-card .blog-main-card-heading {
-    font-size: 20px;
-    font-weight: 700;
-}
-.blog-main-card .blog-main-card-heading a {
-    color: #000;
-    transition: all 0.3s ease-in-out; 
-}
-.blog-main-card .blog-main-card-para {
-    margin-top: 7px;
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-}
-.blog-main-card .blog-main-card-para p {
-    margin-bottom: 0;
-    line-height: 28px;
-}
-.blog-main-card .blog-main-card-heading a:hover {
-    color: var(--theming1);
-}
-.blog-main-card .blog-main-card-icon {
-    font-weight: 600;
-    color: #333 ;
-    font-size: 15px;
-}
-.blog-main-card .blog-main-card-icon i {
-    color: var(--theming1);
-}
-.blog-main-card .blog-main-read {
-    font-weight: 600;
-    color:#000;
-    gap: 4px;
-    transition: all 0.3s ease-in-out;
-}
-.blog-main-card .blog-main-read:hover {
-    color: var(--theming1);
-}
-.blog-main-card .blog-main-read i {
-    transition: all 0.3s ease-in-out;
-}
-.blog-main-card .blog-main-read:hover i {
-    transform: translateX(6px);
-}
-/* blog main card section end */
-
 
 
 /* blog card two section start */
@@ -149,6 +83,10 @@
 }
 .blog-home-card .blog-home-card-img img {
     border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease-in-out;
+}
+.blog-home-card .blog-home-card-img:hover img {
+    transform: scale(1.1);
 }
 .blog-home-card .blog-home-date-card {
     z-index: 2;
@@ -238,13 +176,11 @@
 .blog-home-card .readmore-main a:hover i {
     transform: translateX(4px);
 }
-
 /* blog card two section end */
 
 
 
 /* blog detail section start */
-
 .blog-detail-section .blog-detail-img {
     height: 370px;
 }

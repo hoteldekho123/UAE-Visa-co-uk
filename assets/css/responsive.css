@@ -3,8 +3,9 @@
     .navbar .navbar-nav {
         gap: 20px;
     }
-}
-@media (max-width:991px){
+    .navbar .nav-link.active {
+        color: var(--theming1) !important;
+    }
     .nav-offcanvas {
         max-width: 320px;
     }
@@ -23,10 +24,35 @@
         padding: 0;
     }
     .navbar .navbar-nav {
-        gap: 28px;
+        gap: 20px;
     }
     .navbar .nav-contact-link-two {
         color: #000;
+    }
+    .navbar .nav-contact-link i {
+        color: var(--theming1) !important;
+    }
+    .navbar .nav-link i {
+        transition: all 0.3s ease-in-out;
+    }
+    .navbar .nav-link.rotate i {
+        transform: rotate(-180deg);
+    }
+    .navbar .nav-link.rotate {
+        color: var(--theming1);
+    }
+    .navbar .nav-item {
+        padding: 0;
+    }
+    .navbar .drop-menu {
+        max-height: 0;
+        border: 0 !important;
+        margin-top: 0 !important;
+    }
+    .navbar .drop-menu.hidden {
+        margin-top: 10px !important;
+        border: 1px solid #dee2e6 !important;
+        max-height: 494px !important;
     }
 }
 @media (max-width:767px){
@@ -36,7 +62,12 @@
 }
 @media (max-width:576px) {
     .navbar .navbar-nav {
-        gap: 22px;
+        gap: 20px;
+    }
+    .navbar .header-content-link {
+        height: 30px;
+        width: 30px;
+        font-size: 14px;
     }
 }
 /* navbar media query end */
@@ -423,6 +454,41 @@
 /* important information section end */
 
 
+/* blog home section css start */
+@media (max-width:767px){
+    .blog-card .blog-card-img {
+        height: 250px;
+    }
+    .blog-card .blog-icon {
+        font-size: 14px;
+    }
+    .blog-card .blog-card-heading, .blog-card .blog-card-heading >* {
+        font-size: 16px;
+        line-height: normal;
+    }
+    .blog-card .blog-card-content {
+        height: 70px !important;
+    }
+}
+/* blog home section css end */
+
+
+
+/* blog card two section start */
+@media (max-width:767px) {
+    .blog-home-card .blog-home-card-img {
+        height: 200px;
+    }
+    .blog-home-card .blog-home-card-content {
+        padding: 10px;
+    }
+    .blog-home-card .blog-home-date-inner {
+        font-size: 30px;
+    }
+}
+/* blog card two section end */
+
+
 /* blog detail page start */
 @media (max-width:767px){
     .blog-detail-section .blog-detail-img {
@@ -451,3 +517,179 @@
     }
 }
 /* blog detail page end */
+
+
+/* track page start  */
+@media (max-width:767px){
+    .track-card {
+        padding: 13px;
+    }
+    .track-section .track-title {
+        font-size: 15px;
+        line-height: 27px;
+    }
+}
+  /* track page end */
+
+
+/* contact us page start  */
+@media (max-width:767px){
+    .contact-form {
+        padding: 12px;
+    }
+    .contact-section .contact-heading {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+  /* contact us page end */
+
+
+/* payment page start */
+@media (max-width:767px){
+    .payment-card {
+        padding: 12px;
+    }
+    .payment-card .payment-heading {
+        font-size: 17px;
+    }
+    .payment-card .uae-input-group {
+        flex-direction: column;
+        gap: 1px;
+        align-items: start;
+    }
+    .payment-card .payment-check-main {
+        gap: 10px;
+    }
+    .payment-card .uae-input-group label {
+        width: 40%;
+        white-space: nowrap;
+    }
+    .payment-card .payment-heading::after {
+        height: 2px;
+        width: 72px;
+    }
+    .payment-card .payment-img {
+        height: 28px;
+    }
+    .payment-card .theme-btn {
+        font-size: 15px;
+    }
+}
+/* payment page end */
+
+
+/* payment detail section start */
+@media (max-width:767px){
+    .payment-detail-card .payment-detail-header {
+        padding: 10px;
+    }
+    .payment-detail-card .payment-detail-heading {
+        font-size: 17px;
+        line-height: normal;
+    }
+    .payment-detail-card .payment-price-total {
+        font-size: 15px;
+    }
+    .payment-detail-card .table th {
+        font-size: 15px;
+    }
+    .payment-detail-card .table td {
+        font-size: 14px;
+    }
+    .payment-detail-card .payment-detail-body {
+        padding: 10px;
+    }
+    .payment-detail-card .payment-total-title {
+        font-size: 16px;
+    }
+    .payment-detail-card .payment-total-price {
+        font-size: 17px;
+    }
+    .payment-check-card .payment-check-title {
+        font-size: 15px;
+    }
+    .payment-detail-card .payment-inner-heading {
+        font-size: 17px;
+    }
+    .payment-detail-card .payment-detail-data {
+        padding-block: 7px;
+    }
+    .payment-detail-card .payment-total-main {
+        margin-top: 15px;
+    }
+    .payment-sidebar .theme-btn {
+        font-size: 15px;
+    }
+    .payment-sidebar-card img {
+        height: 30px;
+    }
+    .payment-detail-card .payment-detail-title-two {
+        font-size: 14px;
+    }
+    .payment-detail-card .payment-detail-title {
+        font-size: 15px;
+    }
+}
+/* payment detail section end */
+
+
+/* edit modal start */
+@media (max-width:767px){
+    .edit-modal .modal-dialog {
+        max-width: 95%;
+    }
+    .edit-modal .modal-title {
+        font-size: 18px;
+    }
+}
+/* edit modal end */
+
+
+/* how to apply section start */
+@media (max-width:991px){
+    .howapply-img {
+        border-radius: 0 ;
+        box-shadow:none;
+    }
+    .howapply-card {
+        border-radius: 0;
+        box-shadow:none;
+    }
+    .howapply-main {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        border-radius: 8px;
+        margin-inline: 0;
+        overflow: hidden;
+    }
+}
+@media (max-width:767px){
+    .howapply-card {
+        padding: 12px;
+    }
+    .howapply-card .howapply-card-title {
+        font-size: 15px;
+        line-height: 26px;
+    }
+    .howapply-card .howapply-card-content p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .howto-apply .how-apply-inner {
+        gap: 30px;
+    }
+}
+@media (max-width:576px){
+    .howapply-img {
+        height: 160px !important;
+    }
+    .howapply-img img {
+        object-fit: cover;
+    }
+    .howto-apply .step-count {
+        height: 42px;
+        width: 120px;
+        margin-bottom: 10px;
+    }
+}
+  /* how to apply section end */
